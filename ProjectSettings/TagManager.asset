@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Manager
   - Spawner
+  - FxTemporaire
+  - Envo
   layers:
   - Default
   - TransparentFX
