@@ -15,57 +15,46 @@ namespace Systems.Spawner
 
     public class SpawnManager : MonoBehaviour
     {
-        public EnemyType[] enemyTypes;
         public int enemiesPerWave = 4;
-        public float spawnDelay = 2f;
-        public Vector3 spawnAreaSize = new Vector3(5f, 0f, 5f);
-
-        private int currentWave = 1;
-        private int enemiesToSpawn;
-        private float nextSpawnTime;
-
+        public EnemyType[] enemyTypes;
         public UnityEvent OnEnemyDeath;
         public UnityEvent OnWaveEnd;
-
+        public Vector3 spawnAreaSize = new Vector3(5f, 0f, 5f);
+        public float spawnDelay = 2f;
         public LeanManualAnimation WaveEndEffect;
-
-
-
+        private int currentWave = 1;
+        private int enemiesToSpawn;
         private int enimiesRemaining;
+        private float nextSpawnTime;
 
-        private void Start()
+        public int GetCurrentEnemyCount()
         {
+            return enimiesRemaining;
+        }
+
+        public int GetCurrentWave()
+        {
+            return currentWave;
+        }
+
+        private void EndWave()
+        {
+            WaveEndEffect.BeginTransitions();
+            OnWaveEnd.Invoke();
+            currentWave++;
             StartWave();
         }
 
-        private void Update()
+        private void EnemyDeath()
         {
-            if (enemiesToSpawn > 0)
-            {
-                if (Time.time >= nextSpawnTime)
-                {
-                    SpawnEnemy();
-                    nextSpawnTime = Time.time + spawnDelay;
-                }
-            }
-            if (enimiesRemaining == 0)
-            {
-                EndWave();
-            }
-        }
-
-        private void StartWave()
-        {
-            enemiesToSpawn = enemiesPerWave;
-            enimiesRemaining = enemiesPerWave;
-            nextSpawnTime = Time.time;
+            enimiesRemaining--;
+            OnEnemyDeath.Invoke();
         }
 
         private void SpawnEnemy()
         {
             if (enemyTypes.Length == 0)
             {
-            
                 return;
             }
 
@@ -96,15 +85,12 @@ namespace Systems.Spawner
                 return;
             }
 
-
             Vector3 spawnPosition = transform.position + new Vector3(
                 Random.Range(-spawnAreaSize.x, spawnAreaSize.x),
                 Random.Range(-spawnAreaSize.y, spawnAreaSize.y),
                 Random.Range(-spawnAreaSize.z, spawnAreaSize.z));
 
-
             GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-
 
             /*EnemyLevel enemyLevel = newEnemy.GetComponent<EnemyLevel>();
             if (enemyLevel != null)
@@ -118,7 +104,7 @@ namespace Systems.Spawner
             }*/
 
             Health.Health enemyhealth = newEnemy.GetComponent<Health.Health>();
-            
+
             enemyhealth.OnDie += EnemyDeath;
 
             //enemyhealth.ChangeHealth(enemyhealth.GetCurrentHealth() * ((float)currentWave));
@@ -126,31 +112,32 @@ namespace Systems.Spawner
             enemiesToSpawn--;
         }
 
-        private void EndWave()
+        private void Start()
         {
-            WaveEndEffect.BeginTransitions();
-            OnWaveEnd.Invoke();
-            currentWave++;
             StartWave();
         }
 
-        private void EnemyDeath()
+        private void StartWave()
         {
-            enimiesRemaining--;
-            OnEnemyDeath.Invoke();
-            
-
+            enemiesToSpawn = enemiesPerWave;
+            enimiesRemaining = enemiesPerWave;
+            nextSpawnTime = Time.time;
         }
 
-        public int GetCurrentWave()
+        private void Update()
         {
-            return currentWave;
+            if (enemiesToSpawn > 0)
+            {
+                if (Time.time >= nextSpawnTime)
+                {
+                    SpawnEnemy();
+                    nextSpawnTime = Time.time + spawnDelay;
+                }
+            }
+            if (enimiesRemaining == 0)
+            {
+                EndWave();
+            }
         }
-
-        public int GetCurrentEnemyCount()
-        {
-            return enimiesRemaining;
-        }
-
     }
 }
