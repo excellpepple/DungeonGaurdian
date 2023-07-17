@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   detectionRadius: 386.6
-  attackRadius: 3.92
+  attackRadius: 3.38
   fleeHealthThreshold: 30
   fleeRadius: 13.49
   meleeAttackCooldown: 2.02

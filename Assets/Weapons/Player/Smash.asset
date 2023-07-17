@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Smash
   m_EditorClassIdentifier: 
   attackDamage: 120
-  attackDelay: 1.5
+  attackDelay: 1
   attackRange: 2

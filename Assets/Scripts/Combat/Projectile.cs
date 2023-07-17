@@ -14,23 +14,25 @@ public class Projectile : MonoBehaviour
 
     public Side ProjectileSide;
 
-    bool hasLanded;
+    private bool hasLanded;
 
     [SerializeField]
     private ParticleSystem onLandParticle;
 
     [SerializeField]
     private ParticleSystem trailParticle;
+
     private void Update()
     {
         if (!hasLanded)
-        MoveForward();
+            MoveForward();
     }
 
     private void MoveForward()
     {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
     }
+
     public void Initialize(int damage, LayerMask layer)
     {
         damageAmount = damage;
@@ -39,7 +41,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.tag == "Envo")
+        {
+            Land();
+            return;
+        }
         if (ProjectileSide == Side.player)
         {
             if (!other.CompareTag("Enemy"))
@@ -51,30 +57,28 @@ public class Projectile : MonoBehaviour
                 return;
         }
 
-        
-            IDamagable damageable = other.GetComponent<IDamagable>();
-            if (damageable != null)
-            {
-                damageable.TakeDamage(damageAmount);
-            }
-
-            
-
-
-            if (onLandParticle != null)
-            {
-                onLandParticle.gameObject.SetActive(true);
-                onLandParticle.Play();
-            }
-
-            if (trailParticle != null)
-                trailParticle.Stop();
-
-            hasLanded = true;
-            Destroy(gameObject, 3);
-        
+        IDamagable damageable = other.GetComponent<IDamagable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(damageAmount);
+        }
+        Land();
     }
 
+    private void Land()
+    {
+        if (onLandParticle != null)
+        {
+            onLandParticle.gameObject.SetActive(true);
+            onLandParticle.Play();
+        }
+
+        if (trailParticle != null)
+            trailParticle.Stop();
+
+        hasLanded = true;
+        Destroy(gameObject, 3);
+    }
 }
 
 public enum Side
