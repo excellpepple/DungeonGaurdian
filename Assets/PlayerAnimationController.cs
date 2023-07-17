@@ -14,6 +14,10 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField]
     private CombatController CombatController;
 
+    [Space]
+    [SerializeField]
+    private ParticleSystem HitEffecct;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -30,6 +34,9 @@ public class PlayerAnimationController : MonoBehaviour
     private void OnGetHit(float h)
     {
         PlayerAnim.SetTrigger("Hit");
+
+        if (HitEffecct != null)
+            HitEffecct.Play();
     }
 
     private void Attack()
