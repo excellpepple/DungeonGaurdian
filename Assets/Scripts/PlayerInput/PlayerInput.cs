@@ -1,33 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [RequireComponent(typeof(TopDownController))]
 public class PlayerInput : MonoBehaviour
 {
-
-    TopDownController controller;
+    private TopDownController controller;
 
     [SerializeField] private CombatController combatController;
 
-    public enum CameraDirection { x, z }
+    public enum CameraDirection
+    { x, z }
+
     public CameraDirection cameraDirection = CameraDirection.x;
     public float cameraHeight = 20f;
     public float cameraDistance = 7f;
-    
 
     //Mouse cursor Camera offset effect
-    Vector2 playerPosOnScreen;
-    Vector2 cursorPosition;
-    Vector2 offsetVector;
+    private Vector2 playerPosOnScreen;
 
+    private Vector2 cursorPosition;
+    private Vector2 offsetVector;
 
     public Camera playerCamera;
     public GameObject targetIndicatorPrefab;
 
-    GameObject targetObject;
+    private GameObject targetObject;
+
     //Plane that represents imaginary floor that will be used to calculate Aim target position
-    Plane surfacePlane = new Plane();
+    private Plane surfacePlane = new Plane();
+
     private bool isTopDownAttached;
+
     private void Awake()
     {
         // controller = GetComponent<TopDownController>();
@@ -41,13 +45,10 @@ public class PlayerInput : MonoBehaviour
         //Hide the cursor
         //Cursor.visible = false;
     }
-    // Start is called before the first frame update
-   
 
-    // Update is called once per frame
-    void FixedUpdate()
+    // Start is called before the first frame update
+    private void Update()
     {
-        
         if (Input.GetMouseButtonDown(0) && isTopDownAttached)
         {
             combatController.MeleeAttack();
@@ -56,7 +57,11 @@ public class PlayerInput : MonoBehaviour
         {
             combatController.RangedAttack();
         }
+    }
 
+    // Update is called once per frame
+    private void FixedUpdate()
+    {
         Vector3 cameraOffset = Vector3.zero;
         if (cameraDirection == CameraDirection.x)
         {
@@ -98,7 +103,7 @@ public class PlayerInput : MonoBehaviour
         controller.Move(targetVelocity);
     }
 
-    Vector3 GetAimTargetPos()
+    private Vector3 GetAimTargetPos()
     {
         //Update surface plane
         surfacePlane.SetNormalAndPosition(Vector3.up, transform.position);
@@ -121,6 +126,4 @@ public class PlayerInput : MonoBehaviour
         //No raycast hit, hide the aim target by moving it far away
         return new Vector3(-5000, -5000, -5000);
     }
-
-   
 }

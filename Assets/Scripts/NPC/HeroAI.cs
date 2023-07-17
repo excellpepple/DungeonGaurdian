@@ -52,16 +52,16 @@ public class HeroAI : MonoBehaviour
             if (enemyHealth.CurrentHealthPercentage() <= fleeHealthThreshold)
             {
                 Flee();
+                return;
             }
-            else
-            {
-                Chase();
-            }
-
             if (distanceToTarget <= attackRadius)
             {
                 if (attackCooldownTimer <= 0f)
                     MeleeAttack();
+            }
+            else
+            {
+                Chase();
             }
         }
 
