@@ -14,6 +14,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference playerFootsteps { get; private set; }
 
+    [field: Header("Fireball SFX")]
+    [field: SerializeField] public EventReference fireballFired { get; private set; }
+    [field: SerializeField] public EventReference fireballExplosion{ get; private set; }
     
     public static FMODEvents instance { get; private set; }
 

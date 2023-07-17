@@ -70,6 +70,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426ae6a08054ef14ab5fe8cb9e306202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballSfx:
+    Guid:
+      Data1: -1982500152
+      Data2: 1255181425
+      Data3: -1070256991
+      Data4: -941173642
+    Path: event:/ExplosionFireBall
   TargetTag: Enemy
   moveSpeed: 10
   ProjectileSide: 0
@@ -82,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8435384794111306809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 

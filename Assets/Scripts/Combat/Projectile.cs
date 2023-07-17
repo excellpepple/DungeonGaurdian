@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
 
     private void MoveForward()
     {
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * (moveSpeed * Time.deltaTime));
     }
 
     public void Initialize(int damage, LayerMask layer)
@@ -77,6 +77,7 @@ public class Projectile : MonoBehaviour
             trailParticle.Stop();
 
         hasLanded = true;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.fireballExplosion, this.transform.position);
         Destroy(gameObject, 3);
     }
 }
