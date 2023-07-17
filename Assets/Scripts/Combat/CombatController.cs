@@ -4,10 +4,9 @@ using Systems.Health;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-
 [System.Serializable]
-public class ManaChangeEvent : UnityEvent<int, int> { }
+public class ManaChangeEvent : UnityEvent<int, int>
+{ }
 
 public class CombatController : MonoBehaviour
 {
@@ -18,12 +17,15 @@ public class CombatController : MonoBehaviour
     [SerializeField] private int maxMana = 100;
     [SerializeField] private float manaRegenerationRate = 10f;
 
+    public event Action OnAttack;
+
     public ManaChangeEvent onManaChange;
 
     private int currentMana;
     private bool canAttack = true;
     public bool canShoot = false;
     public bool canDash = false;
+
     private void Start()
     {
         currentMana = maxMana;
@@ -37,7 +39,8 @@ public class CombatController : MonoBehaviour
             return;
         }
 
-        
+        OnAttack?.Invoke();
+
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, meleeWeapon.attackRange, enemyLayer);
 
         foreach (Collider enemy in hitEnemies)
@@ -50,9 +53,8 @@ public class CombatController : MonoBehaviour
         }
 
             ;
-            StartCoroutine(AttackDelay(meleeWeapon.attackDelay));
-            //onManaChange.Invoke(currentMana, maxMana);
-        
+        StartCoroutine(AttackDelay(meleeWeapon.attackDelay));
+        //onManaChange.Invoke(currentMana, maxMana);
     }
 
     public void RangedAttack()
@@ -84,6 +86,7 @@ public class CombatController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         canAttack = true;
     }
+
     public System.Collections.IEnumerator AttackDelay()
     {
         canAttack = false;
