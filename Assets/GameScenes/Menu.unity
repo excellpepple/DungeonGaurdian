@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5987,13 +5987,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7191221379371776405, guid: 1e458f17b7c9e0a479fe0fe04788508a,
         type: 3}
+      propertyPath: SFXVolume
+      value: 0.651
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191221379371776405, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
       propertyPath: musicVolume
-      value: 0.409
+      value: 0.213
       objectReference: {fileID: 0}
     - target: {fileID: 8720797544423880229, guid: 1e458f17b7c9e0a479fe0fe04788508a,
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data1
+      value: -1671390187
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data2
+      value: 1200200296
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data3
+      value: -1827505521
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data4
+      value: -1918794806
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <fireballExplosion>k__BackingField.Path
+      value: event:/ExplosionFireBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <fireballExplosion>k__BackingField.Guid.Data1
+      value: -1982500152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <fireballExplosion>k__BackingField.Guid.Data2
+      value: 1255181425
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <fireballExplosion>k__BackingField.Guid.Data3
+      value: -1070256991
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916097067133650700, guid: 1e458f17b7c9e0a479fe0fe04788508a,
+        type: 3}
+      propertyPath: <fireballExplosion>k__BackingField.Guid.Data4
+      value: -941173642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

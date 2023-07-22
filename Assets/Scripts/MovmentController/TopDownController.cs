@@ -104,7 +104,7 @@ public class TopDownController : MonoBehaviour
 
         // We apply gravity manually for more tuning control
         r.AddForce(new Vector3(0, -gravity * r.mass, 0));
-        
+        UpdateSound();
         grounded = false;
 
         
