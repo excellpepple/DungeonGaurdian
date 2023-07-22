@@ -427,7 +427,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: ../../UnityProject/GTMKFmodProj/GMTK_Jam23/GMTK_Jam23.fspro
-  sourceBankPath: Builds
+  sourceBankPath: GTMKFmodProj/GMTK_Jam23/Build/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -449,12 +449,12 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Master
+  - GMTK_Jam23/Build/Desktop/Master
   Banks:
-  - Ambience
-  - MainMenu
-  - Music
-  - SFX
+  - GMTK_Jam23/Build/Desktop/Ambience
+  - GMTK_Jam23/Build/Desktop/MainMenu
+  - GMTK_Jam23/Build/Desktop/Music
+  - GMTK_Jam23/Build/Desktop/SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
