@@ -59,8 +59,9 @@ public class TopDownController : MonoBehaviour
 
     private void UpdateSound()
     {
-        if (r.velocity.x != 0 && IsGrounded())
+        if (r.velocity.x != 0 /*&& IsGrounded()*/)
         {
+            // Debug.Log("player moving");
             PLAYBACK_STATE playbackState;
             playerFootsteps.getPlaybackState(out playbackState);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
