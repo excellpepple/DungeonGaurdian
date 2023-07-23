@@ -46,17 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ambience>k__BackingField:
     Guid:
-      Data1: 922719622
-      Data2: 1097924920
-      Data3: -1896983647
-      Data4: 835509947
+      Data1: -1671390187
+      Data2: 1200200296
+      Data3: -1827505521
+      Data4: -1918794806
     Path: event:/MenuMusic
   <music>k__BackingField:
     Guid:
-      Data1: 922719622
-      Data2: 1097924920
-      Data3: -1896983647
-      Data4: 835509947
+      Data1: -1671390187
+      Data2: 1200200296
+      Data3: -1827505521
+      Data4: -1918794806
     Path: event:/MenuMusic
   <playerFootsteps>k__BackingField:
     Guid:
@@ -65,6 +65,20 @@ MonoBehaviour:
       Data3: 1648469165
       Data4: 563427494
     Path: event:/PlayerFootsteps
+  <fireballFired>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <fireballExplosion>k__BackingField:
+    Guid:
+      Data1: -1982500152
+      Data2: 1255181425
+      Data3: -1070256991
+      Data4: -941173642
+    Path: event:/ExplosionFireBall
 --- !u!1 &8720797544423880229
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +112,7 @@ Transform:
   m_Children:
   - {fileID: 1141679270716367872}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7191221379371776405
 MonoBehaviour:

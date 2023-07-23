@@ -49,15 +49,15 @@ public class HeroAI : MonoBehaviour
         if (distanceToTarget <= detectionRadius)
         {
             RotateTowards(target.position);
-
-            if (distanceToTarget <= attackRadius)
-            {
-                if (!isAttacking && attackCooldownTimer <= 0f)
-                    MeleeAttack();
-            }
-            else if (enemyHealth.CurrentHealthPercentage() <= fleeHealthThreshold)
+            if (enemyHealth.CurrentHealthPercentage() <= fleeHealthThreshold)
             {
                 Flee();
+                return;
+            }
+            if (distanceToTarget <= attackRadius)
+            {
+                if (attackCooldownTimer <= 0f)
+                    MeleeAttack();
             }
             else
             {
@@ -150,7 +150,6 @@ public class HeroAI : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, fleeRadius);
     }
-   
 }
 
 public enum EnemyType

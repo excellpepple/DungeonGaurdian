@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 665009456353315089}
   - component: {fileID: 2544295747898762998}
   - component: {fileID: 2643759071593026472}
+  - component: {fileID: 7927171466610613133}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -69,8 +70,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426ae6a08054ef14ab5fe8cb9e306202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballSfx:
+    Guid:
+      Data1: -1982500152
+      Data2: 1255181425
+      Data3: -1070256991
+      Data4: -941173642
+    Path: event:/ExplosionFireBall
   TargetTag: Enemy
   moveSpeed: 10
+  ProjectileSide: 0
   onLandParticle: {fileID: 5774807440670096774}
   trailParticle: {fileID: 8850144828924958719}
 --- !u!114 &2643759071593026472
@@ -80,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8435384794111306809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -104,6 +113,33 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!54 &7927171466610613133
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435384794111306809}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &123352034940917506
 PrefabInstance:
   m_ObjectHideFlags: 0
