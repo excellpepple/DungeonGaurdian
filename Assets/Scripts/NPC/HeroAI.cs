@@ -85,6 +85,7 @@ public class HeroAI : MonoBehaviour
 
     private void MeleeAttack()
     {
+        
         if (EnemyType == EnemyType.Warrior)
             combatController.MeleeAttack();
         else

@@ -50,21 +50,21 @@ MonoBehaviour:
       Data2: 1200200296
       Data3: -1827505521
       Data4: -1918794806
-    Path: event:/MenuMusic
+    Path: event:/GameMusic/MenuMusic
   <music>k__BackingField:
     Guid:
       Data1: -1671390187
       Data2: 1200200296
       Data3: -1827505521
       Data4: -1918794806
-    Path: event:/MenuMusic
+    Path: event:/GameMusic/MenuMusic
   <playerFootsteps>k__BackingField:
     Guid:
       Data1: 1916948420
       Data2: 1228882304
       Data3: 1648469165
       Data4: 563427494
-    Path: event:/PlayerFootsteps
+    Path: event:/InGameSfx/PlayerFootsteps
   <fireballFired>k__BackingField:
     Guid:
       Data1: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
       Data2: 1255181425
       Data3: -1070256991
       Data4: -941173642
-    Path: event:/ExplosionFireBall
+    Path: event:/InGameSfx/ExplosionFireBall
 --- !u!1 &8720797544423880229
 GameObject:
   m_ObjectHideFlags: 0

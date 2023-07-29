@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
 
     public void Initialize(int damage, LayerMask layer)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.fireballFired, this.transform.position);
         damageAmount = damage;
         enemyLayer = layer;
     }

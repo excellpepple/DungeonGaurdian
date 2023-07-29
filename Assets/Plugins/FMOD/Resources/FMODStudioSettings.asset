@@ -426,8 +426,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../UnityProject/GTMKFmodProj/GMTK_Jam23/GMTK_Jam23.fspro
-  sourceBankPath: ../../UnityProject/GTMKFmodProj/GMTK_Jam23/Build
+  sourceProjectPath: ../GTMKFmodProj/GMTK_Jam23/GMTK_Jam23.fspro
+  sourceBankPath: ../GTMKFmodProj/GMTK_Jam23/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

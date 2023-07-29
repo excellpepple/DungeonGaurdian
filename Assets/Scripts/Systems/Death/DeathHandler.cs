@@ -20,6 +20,7 @@ namespace Systems.Health
 
         private void HandleDeath()
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.DeathSound, this.transform.position);
             Destroy(gameObject, 2f);
         }
 

@@ -3626,7 +3626,7 @@ MonoBehaviour:
       Data2: 1097924920
       Data3: -1896983647
       Data4: 835509947
-    Path: event:/GameMusic
+    Path: event:/GameMusic/GameMusic
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -8390,7 +8390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899796385}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -8402,7 +8402,7 @@ MonoBehaviour:
       Data2: 1097924920
       Data3: -1896983647
       Data4: 835509947
-    Path: event:/GameMusic
+    Path: event:/GameMusic/GameMusic
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -15814,7 +15814,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601303781}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -15822,11 +15822,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 922719622
-      Data2: 1097924920
-      Data3: -1896983647
-      Data4: 835509947
-    Path: event:/GameMusic
+      Data1: -1854534130
+      Data2: 1078649786
+      Data3: 1142232464
+      Data4: -1820110377
+    Path: event:/GameMusic/GameMusic New Looped only With Lose sound
   Event: 
   PlayEvent: 1
   StopEvent: 2

@@ -40,7 +40,6 @@ namespace Systems.Health
 
             if (currentHealth <= 0)
             {
-
                 OnDie?.Invoke();
                 //manager.DecreaseCount();
 

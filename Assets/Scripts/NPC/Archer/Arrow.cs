@@ -19,6 +19,7 @@ namespace NPC.Archer
         private void Start()
         {
             rigidbody = GetComponent<Rigidbody>();
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.ArrowReleased, this.transform.position);
             Destroy(gameObject, 3f); //To Destory if nothing is hit
         }
 
@@ -34,7 +35,7 @@ namespace NPC.Archer
         private void OnCollisionEnter(Collision collision)
         {
             IDamagable damagable = collision.transform.GetComponent<IDamagable>();
-
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.ArrowHit, this.transform.position);
             damagable?.TakeDamage(damage);
 
             if(damagable != null)

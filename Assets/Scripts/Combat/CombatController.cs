@@ -40,7 +40,7 @@ public class CombatController : MonoBehaviour
         }
 
         OnAttack?.Invoke();
-
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SwordSwing, this.transform.position);
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, meleeWeapon.attackRange, enemyLayer);
 
         foreach (Collider enemy in hitEnemies)
@@ -48,6 +48,7 @@ public class CombatController : MonoBehaviour
             IDamagable damageable = enemy.GetComponent<IDamagable>();
             if (damageable != null)
             {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.SwordHit, this.transform.position);
                 damageable.TakeDamage(meleeWeapon.attackDamage);
             }
         }
